@@ -1,0 +1,24 @@
+[project]
+name = "necromod-browser"
+version = "0.1.0"
+description = "Tools for Crypt of the NecroDancer WSP1 packages (.wsp / .necromod)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pyside6>=6.12.0",
+]
+
+[project.scripts]
+necromod = "necromod.cli:main"
+necromod-gui = "necromod.gui:main"
+
+[dependency-groups]
+zstd = ["zstandard>=0.23"]
+
+[build-system]
+requires = ["uv_build>=0.13,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "necromod"
+module-root = "src"
